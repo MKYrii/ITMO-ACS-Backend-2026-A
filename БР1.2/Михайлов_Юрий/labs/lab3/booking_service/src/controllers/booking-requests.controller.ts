@@ -62,7 +62,6 @@ class BookingRequestsController extends BaseController {
             throw new NotFoundError('Property not found');
         }
 
-        // Получаем property, чтобы узнать owner_id
         const propertyData = await fetch(
             `${PROPERTY_SERVICE_URL}/api/internal/properties/${body.property_id}`,
             { headers: { 'Content-Type': 'application/json' } }
@@ -76,7 +75,6 @@ class BookingRequestsController extends BaseController {
         });
         const saved = await this.repository.save(created);
 
-        // Отправляем событие для создания чата
         await publishEvent('booking_request.created', {
             bookingRequestId: saved.id,
             propertyId: body.property_id,

@@ -16,10 +16,10 @@ export async function startConsumer(serviceName: string) {
     const channel = getChannel();
     const exchange = getExchangeName();
 
-    // Создаем очередь для этого сервиса (временная, уникальная)
+    // Создаем очередь для сервиса
     const queue = await channel.assertQueue(`${serviceName}.queue`, { durable: true });
 
-    // Привязываем очередь к exchange для всех eventType, которые нас интересуют
+    // Привязываем очередь к exchange
     const eventTypes = Array.from(handlers.keys());
     for (const eventType of eventTypes) {
         await channel.bindQueue(queue.queue, exchange, eventType);
@@ -27,7 +27,7 @@ export async function startConsumer(serviceName: string) {
 
     console.log(`Consumer started for ${serviceName}, listening for: ${eventTypes.join(', ')}`);
 
-    // Потребляем сообщения
+    // сообщения
     channel.consume(queue.queue, async (msg) => {
         if (!msg) return;
 
@@ -47,7 +47,7 @@ export async function startConsumer(serviceName: string) {
             channel.ack(msg);
         } catch (error) {
             console.error('Error processing message:', error);
-            channel.nack(msg, false, false); // не переотправляем
+            channel.nack(msg, false, false);
         }
     });
 }

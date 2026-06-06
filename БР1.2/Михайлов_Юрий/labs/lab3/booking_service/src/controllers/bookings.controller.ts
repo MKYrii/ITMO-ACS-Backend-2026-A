@@ -1,4 +1,3 @@
-// booking-service/controllers/bookings.controller.ts
 import {
     BadRequestError,
     Body,
@@ -77,7 +76,7 @@ class BookingsController extends BaseController {
 
         const created = this.repository.create({
             property_id: body.property_id,
-            tenant_id: user.id, // берем из авторизации
+            tenant_id: user.id,
             start_date: body.start_date,
             end_date: body.end_date,
             details: body.details,

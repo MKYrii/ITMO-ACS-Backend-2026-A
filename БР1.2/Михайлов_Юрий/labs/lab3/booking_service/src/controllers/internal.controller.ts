@@ -11,7 +11,6 @@ class CheckBookingDto {
 @JsonController('/internal')
 export class InternalBookingController {
 
-    // Проверить существование бронирования
     @Get('/bookings/:id')
     @OpenAPI({ deprecated: true })
     async getBooking(@Param('id') id: number) {
