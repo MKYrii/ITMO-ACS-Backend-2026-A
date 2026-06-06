@@ -6,7 +6,7 @@ import { Review } from '../models/review.entity';
 export function setupConsumers() {
     const { subscribe } = require('./consumer');
 
-    // 1. Автосоздание чата при заявке на бронирование
+    // Автосоздание чата при заявке на бронирование
     subscribe('booking_request.created', async (data: {
         bookingRequestId: number;
         propertyId: number;
@@ -43,7 +43,7 @@ export function setupConsumers() {
         console.log(`Created conversation ${saved.id} for booking request ${data.bookingRequestId}`);
     });
 
-    // 2. Удаление данных пользователя
+    // Удаление данных пользователя
     subscribe('user.deleted', async (data: { userId: number }) => {
         console.log(`Engagement Service: Processing user.deleted for userId: ${data.userId}`);
 
