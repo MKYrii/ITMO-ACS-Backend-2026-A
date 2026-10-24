@@ -156,7 +156,7 @@ class UpdatePropertyDto {
 }
 
 
-const ENGAGEMENT_SERVICE_URL = process.env.ENGAGEMENT_SERVICE_URL || 'http://127.0.0.1:8003';
+const ENGAGEMENT_SERVICE_URL = process.env.ENGAGEMENT_SERVICE_URL || 'http://engagement-service:8003';
 
 @EntityController({
     baseRoute: '/properties',

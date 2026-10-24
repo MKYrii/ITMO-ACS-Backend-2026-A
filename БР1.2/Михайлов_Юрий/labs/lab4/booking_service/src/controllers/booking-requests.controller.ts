@@ -20,7 +20,7 @@ import { BookingRequest } from '../models/booking-request.entity';
 import { ObjectLiteral } from "typeorm";
 import {publishEvent} from "../rabbitmq/publisher";
 
-const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://localhost:8001';
+const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://property-service:8001';
 
 class CreateBookingRequestDto {
     @IsInt()

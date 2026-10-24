@@ -23,7 +23,7 @@ import { ObjectLiteral } from "typeorm";
 
 import { JSONSchema } from 'class-validator-jsonschema';
 
-const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://localhost:8001';
+const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://property-service:8001';
 
 class CreateBookingDto {
     @IsInt()

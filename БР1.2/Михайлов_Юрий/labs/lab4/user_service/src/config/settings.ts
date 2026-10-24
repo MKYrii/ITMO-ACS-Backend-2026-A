@@ -13,7 +13,7 @@ class Settings {
     APP_API_PREFIX: string = env.APP_API_PREFIX || '/api';
 
     // db connection settings
-    DB_HOST: string = env.DATABASE_HOST || 'localhost';
+    DB_HOST: string = env.DATABASE_HOST || 'auth-db';
     DB_PORT: number = parseInt(env.DATABASE_PORT || '5432');
     DB_NAME: string = env.POSTGRES_DB || 'maindb';
     DB_USER: string = env.POSTGRES_USER || 'maindb';

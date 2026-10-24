@@ -1,6 +1,6 @@
 import amqp, {Channel, ChannelModel, Connection} from 'amqplib';
 
-const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://localhost:5672';
+const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://guest:guest@rabbitmq:5672';
 const EXCHANGE_NAME = 'rental.events';
 
 let connection: ChannelModel = null;

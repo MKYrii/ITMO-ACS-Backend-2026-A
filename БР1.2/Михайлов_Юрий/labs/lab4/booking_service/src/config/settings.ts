@@ -3,7 +3,7 @@ import { env } from 'process';
 class Settings {
     // application base settings
     APP_HOST: string = env.APP_HOST || '0.0.0.0';
-    APP_PORT: number = parseInt(env.APP_PORT || '8000');
+    APP_PORT: number = parseInt(env.APP_PORT || '8002');
     APP_PROTOCOL: string = env.APP_PROTOCOL || 'http';
     APP_CONTROLLERS_PATH: string =
         env.APP_CONTROLLERS_PATH ||
@@ -13,7 +13,7 @@ class Settings {
     APP_API_PREFIX: string = env.APP_API_PREFIX || '/api';
 
     // db connection settings
-    DB_HOST: string = env.DATABASE_HOST || 'localhost';
+    DB_HOST: string = env.DATABASE_HOST || 'booking-db';
     DB_PORT: number = parseInt(env.DATABASE_PORT || '5432');
     DB_NAME: string = env.POSTGRES_DB || 'maindb';
     DB_USER: string = env.POSTGRES_USER || 'maindb';

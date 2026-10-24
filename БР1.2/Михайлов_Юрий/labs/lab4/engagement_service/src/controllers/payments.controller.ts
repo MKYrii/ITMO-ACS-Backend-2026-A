@@ -18,7 +18,7 @@ import dataSource from '../config/data-source';
 import { Payment } from '../models/payment.entity';
 import { ObjectLiteral } from "typeorm";
 
-const BOOKING_SERVICE_URL = process.env.BOOKING_SERVICE_URL || 'http://localhost:8002';
+const BOOKING_SERVICE_URL = process.env.BOOKING_SERVICE_URL || 'http://booking-service:8002';
 
 class CreatePaymentDto {
     @IsInt()

@@ -16,7 +16,7 @@ import dataSource from '../config/data-source';
 
 import { Review } from '../models/review.entity';
 
-const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://localhost:8001';
+const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://property-service:8001';
 
 class CreateReviewDto {
     @IsInt()
