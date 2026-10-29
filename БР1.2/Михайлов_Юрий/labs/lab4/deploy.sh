@@ -17,7 +17,7 @@ for svc in auth-service property-service booking-service engagement-service; do
 done
 
 echo "==> up -d"
-$COMPOSE up -d
+$COMPOSE up -d --force-recreate gateway
 
 echo "==> prune dangling images"
 docker image prune -f
