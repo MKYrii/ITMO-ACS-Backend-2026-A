@@ -21,4 +21,4 @@ jobs:
           command_timeout: 30m
           script: |
             cd /opt/yriy_project/ITMO-ACS-Backend-2026-A/БР1.2/Михайлов_Юрий/labs/lab4
-            ./deploy.sh
+            bash deploy.sh
