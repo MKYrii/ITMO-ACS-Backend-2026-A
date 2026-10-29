@@ -1,4 +1,4 @@
-name: Deploy to server, hw6
+name: Deploy to server,hw6
 
 on:
   push:
